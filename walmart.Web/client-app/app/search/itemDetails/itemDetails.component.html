@@ -1,0 +1,35 @@
+<div class="itemDetails-container">
+        <ngx-loading [show]="loading" config="{ animationType: ANIMATION_TYPES.wanderingCubes,
+            backdropBackgroundColour: 'rgba(0,0,0,0.1)', 
+            backdropBorderRadius: '4px',
+            primaryColour: '#ffffff', 
+            secondaryColour: '#ffffff', 
+            tertiaryColour: '#ffffff' }"></ngx-loading>
+    <div fxLayout="coloumn" fxLayoutAlign="space-around">
+        <div class="row" style="width:500px">
+            <label><b><u>Product Details</u></b></label>
+            <div class="detailsDiv">
+                <img src="{{_searchService.modalItem.mediumImage}}" /><br /><u>{{_searchService.modalItem.name}}</u>
+                <br />
+                <label><p><strong>BrandName:</strong>{{_searchService.modalItem.brandName}}</p></label> 
+                <br />
+                <label><p><strong>ModalNumber:</strong>{{_searchService.modalItem.moddelNumber}}</p></label> 
+                <br />
+                <label><p><strong>Price: $</strong>{{_searchService.modalItem.salePrice}}</p></label> 
+                <br />
+                <label><p><strong>Description:</strong>{{_searchService.modalItem.description}}</p></label> 
+            </div>
+        </div>
+        <div class="row">
+            <label><b><u>Recommendations</u></b></label>
+            <div *ngFor="let item of recommendations">
+                <div class="resultsDiv">
+                    <img src="{{item.mediumImage}}" /><br />
+                    <label class="nameLabel">{{item.name}}</label><br />
+                    <label>Manufracturer: {{item.brandName}}</label>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="container">
+        <ngx-loading [show]="loading" config="{ animationType: ANIMATION_TYPES.wanderingCubes,
+            backdropBackgroundColour: 'rgba(0,0,0,0.1)', 
+            backdropBorderRadius: '4px',
+            primaryColour: '#ffffff', 
+            secondaryColour: '#ffffff', 
+            tertiaryColour: '#ffffff' }"></ngx-loading>
+    <div fxLayout="coloumn" fxLayoutAlign="space-around">
+        <div class="row" align="center">
+            <label class="urlLabel">
+                Please Enter the Item to Search:
+                <input type="text" id="txtUrl" placeholder="Bike ..." [(ngModel)]="searchText"  required autocomplete="off"
+                />
+            </label>
+            <div class="submitButton">
+                <button type="submit" id="btnSubmit" class="btn" (click)="onSearchClick()">Search</button>
+                <button type="button" id="btnClear" class="btn" (click)="searchText=null">
+                    Clear
+                </button>
+            </div>
+        </div>
+    </div>
+     <div class="row" *ngIf="results">
+            <div *ngFor="let item of items">
+                <div class="resultsDiv">
+                    <img src="{{item.thumbnailImg}}" (click)="onImageClick(item)" /><br />
+                    <strong class="nameLabel">{{item.name}}</strong><br />
+                    <strong>Manufracturer: {{item.brandName}}</strong>
+                </div>
+            </div>
+        </div>
+</div>

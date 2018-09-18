@@ -1,0 +1,13 @@
+<mat-list-item class="ne-group-item" (click)= "clicked()">
+    <mat-icon color="primary" svgIcon="{{icon}}"></mat-icon>
+    <span class="ne-menu-label" >{{label}}</span>
+    <span class="ne-spacer"></span>
+    <i *ngIf="isOpen" class="material-icons">keyboard_arrow_down</i>
+    <i *ngIf="!isOpen" class="material-icons">keyboard_arrow_right</i>
+</mat-list-item>
+
+<div [hidden]="!isOpen">
+    <mat-nav-list>
+        <ng-content></ng-content>
+    </mat-nav-list>
+</div>

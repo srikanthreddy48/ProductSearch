@@ -1,0 +1,155 @@
+@import '~@angular/material/_theming';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:500,400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin-ext');
+@import 'app/core/components/sidemenu/_sidemenu.theme.scss';
+@import 'app/shared/components/components.component.scss';
+
+// $subheading-2 is used in the mat-sidenav-item
+
+// display-4, display-3, display-2 and display-1 - Large, one-off headers, usually at the top of the page (e.g. a hero header).
+// headline - Section heading corresponding to the <h1> tag.
+// title - Section heading corresponding to the <h2> tag.
+// subheading-2 - Section heading corresponding to the <h3> tag.
+// subheading-1 - Section heading corresponding to the <h4> tag.
+// body-1 - Base body text.
+// body-2 - Bolder body text.
+// caption - Smaller body and hint text.
+// button - Buttons and anchors.
+// input - Form input fields.
+
+$neer-typography: mat-typography-config(
+    $font-family: '"Open Sans", sans-serif',
+    $display-4: mat-typography-level(112px, 112px, 300),
+    $display-3:     mat-typography-level(56px, 56px, 400),
+    $display-2:     mat-typography-level(45px, 48px, 400),
+    $display-1:     mat-typography-level(34px, 40px, 400),
+    $headline:      mat-typography-level(24px, 32px, 400),
+    $title:         mat-typography-level(30px, 36px, 300),
+    $subheading-2:  mat-typography-level(14px, 17px, 400), 
+    $subheading-1:  mat-typography-level(15px, 24px, 400),
+    $body-2:        mat-typography-level(14px, 24px, 500),
+    $body-1:        mat-typography-level(14px, 20px, 400),
+    $caption:       mat-typography-level(12px, 20px, 400),
+    $button:        mat-typography-level(14px, 14px, 500),
+    $input:         mat-typography-level(inherit, 1.125, 400)
+);
+
+@include mat-core($neer-typography);
+
+// If you want to apply theme to individual components 
+// @include mat-base-typography($custom-typography);
+
+$mat-green: (
+    50 : #ebf4e8,
+    100 : #cee3c5,
+    200 : #add19e,
+    300 : #8cbf77,
+    400 : #74b159,
+    500 : #5ba33c,
+    600 : #539b36,
+    700 : #49912e,
+    800 : #408827,
+    900 : #2f771a,
+    A100 : #c0ffb1,
+    A200 : #98ff7e,
+    A400 : #6fff4b,
+    A700 : #5aff31,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$mat-blue: (
+    50 : #e0eff6,
+    100 : #b3d8e9,
+    200 : #80bedb,
+    300 : #4da4cc,
+    400 : #2691c1,
+    500 : #007db6,
+    600 : #0075af,
+    700 : #006aa6,
+    800 : #00609e,
+    900 : #004d8e,
+    A100 : #badbff,
+    A200 : #87c0ff,
+    A400 : #54a5ff,
+    A700 : #3b97ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$mat-red: (
+    50 : #f3e0e0,
+    100 : #e0b3b3,
+    200 : #cc8080,
+    300 : #b84d4d,
+    400 : #a82626,
+    500 : #990000,
+    600 : #910000,
+    700 : #860000,
+    800 : #7c0000,
+    900 : #6b0000,
+    A100 : #ff9a9a,
+    A200 : #ff6767,
+    A400 : #ff3434,
+    A700 : #ff1a1a,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$neer-theme-primary: mat-palette($mat-green);
+$neer-theme-accent: mat-palette($mat-blue);
+$neer-theme-warn: mat-palette($mat-red);
+$neer-theme: mat-light-theme($neer-theme-primary, $neer-theme-accent, $neer-theme-warn);
+
+// Custom Neer theme mixin for components
+@mixin neer-component-theme($theme) {
+    @include ne-button-theme($theme);
+    @include ne-input-theme($theme);
+    @include ne-typography-theme($theme);
+    @include ne-sidemenu-theme($theme);
+}
+
+@include angular-material-theme($neer-theme);
+@include neer-component-theme($neer-theme);
+

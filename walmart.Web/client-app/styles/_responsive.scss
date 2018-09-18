@@ -1,0 +1,33 @@
+@media screen and (max-width: 1050px) {
+    body {
+    //    .app-content {margin: 10px !important;}
+        h1 {font: 300 36pt/48pt 'Open Sans', sans-serif !important;}
+        h2 {font: 300 30pt/36pt 'Open Sans', sans-serif !important;}
+        h3 {font: 300 24pt/32pt 'Open Sans', sans-serif !important;}
+        h4 {font: 300 18pt/24pt 'Open Sans', sans-serif !important;}
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .ne-page-title, .member-message {display: none !important;}
+}
+
+@media screen and (max-width: 850px) {
+    .ne-navigation.logged-out {display: none !important;}
+    .login-container {
+        margin: 30px 10px !important;
+        .ne-input {
+            display: block;
+            margin: 20px auto !important;
+            max-width: 84%;
+        } 
+        .ne-button-icon {margin: 0 !important;}
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .desktopMenu {display: none !important;}
+    .mobileMenu {display: block !important;}
+    #sidenav {position: absolute; right: 20px;}
+    .ne-logo {left: 20px !important;}
+}

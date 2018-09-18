@@ -1,0 +1,37 @@
+
+@import '~styles/_common.scss';
+
+mat-nav-list {
+    .ne-menu-active {
+        background-color: #E9F2F9;
+        border-left:solid 4px #5ba33c;
+        mat-icon {
+            fill:#333333;
+            stroke: #333333;
+        }
+        .mat-list-item-content {
+            padding-left: 6px !important;
+        }
+    }
+    .mat-list-item-content:hover {
+        background-color:#F3F6F8;
+        mat-icon {
+            fill:#333333;
+            stroke: #333333;
+        }
+    }
+    mat-list-item {
+        >div.mat-list-item-content {
+            padding: 0 10px !important;
+            .ne-menu-label {
+                padding-left: 10px;
+            }
+        }
+        .ne-spacer {
+            flex: 1 1 auto;
+        }
+        .mat-icon {
+            @include mat-icon-size(34px);
+        } 
+    }
+}

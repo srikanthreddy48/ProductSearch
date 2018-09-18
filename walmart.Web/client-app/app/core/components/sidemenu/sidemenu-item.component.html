@@ -1,0 +1,4 @@
+<mat-list-item [ngClass]="{'ne-menu-active':isActive}" (click)= "selectMenu($event)">
+        <mat-icon color="primary" svgIcon="{{icon}}"></mat-icon>
+        <a class="ne-menu-label" routerLink="{{route}}" routerLinkActive="active">{{label}}</a> 
+</mat-list-item>

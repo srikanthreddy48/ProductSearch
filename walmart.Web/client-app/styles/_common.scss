@@ -1,0 +1,46 @@
+//Variables, Functions and Mixins
+
+
+@mixin mat-icon-size($size: 24px) {
+    font-size: $size;
+    height: $size;
+    width: $size;
+    line-height: $size;
+  }
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius !important;
+    -moz-border-radius: $radius !important;
+    border-radius: $radius !important;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+     .ne-page-title {top: 31px !important;}
+     .login-container {
+         .forgot-password input {
+             vertical-align: text-top !important;
+            height: 13px !important;
+        }
+     }
+}
+
+@mixin border-color($color) {
+    border: 2px solid $color !important;
+}
+
+@mixin font-color($color) {
+    color: $color !important;
+}
+
+
+@mixin font-georgia {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+@mixin font-opensans {
+    font-family: 'Open Sans', sans-serif;
+}
+
+@mixin font-size-15 {
+    font-size: 15pt !important;
+}

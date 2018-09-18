@@ -1,0 +1,15 @@
+@import './neer-theme';
+@import './styles/_common.scss';
+
+body {
+    padding: 0;
+    height: 100vh;
+    margin: 0; // Default 8px added to all browsers
+}
+.mat-dialog-container {
+    max-height: 820px !important;
+    width:1080px !important;
+    box-shadow: 1650px 750px 750px rgba(0, 0, 0, 0.5) !important;
+    margin-left:-40% !important;
+    margin-top:18% !important;
+  }

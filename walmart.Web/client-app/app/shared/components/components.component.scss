@@ -1,0 +1,136 @@
+//@import '~@angular/material/theming';
+@import '../../../styles/_common.scss';
+
+
+.ne-icon-circle {
+    border: 2px solid #000;
+    border-radius: 100%;
+    margin: 0 10px;
+}
+
+.ne-icon-circle::before {
+    margin: 20px;
+    display: block;
+}
+
+.iconography span {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+
+.iconography span span {
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.mat-nav-list a {
+    display: block;
+    width: 100%;
+}
+
+// BUTTON
+
+@mixin ne-button-theme($neer-theme) {
+
+    $accent: map-get($neer-theme, accent);
+
+    .ne-button-base {
+        box-shadow: none !important;
+        margin: 10px !important;
+    }
+
+    .ne-button-base-x {
+        @extend .ne-button-base;
+        height: 43px;
+        background-color: #FFF;
+        @include font-size-15;
+        @include font-color(mat-color($accent));
+        @include border-radius(100px);
+        @include border-color(mat-color($accent));
+    }
+
+    .ne-button {
+        @extend .ne-button-base-x;
+        width: 250px;
+    }
+
+    .ne-button-x {
+        @extend .ne-button-base-x;
+        width: 337px;
+    }
+
+    .ne-button-fab {
+        @extend .ne-button-base;
+        border: 0 !important;
+        background: #000 !important;
+        color: #FFF !important;
+        width: 30px !important;
+        height: 30px !important;
+        i {padding: 0 !important;}
+    }
+    
+    .ne-button-icon {
+        height: 30px !important;
+        width: 30px !important;
+        line-height: 0 !important;
+        min-width: 30px !important;
+        min-height: 30px !important;
+        border: 0 !important;
+        background: transparent !important;
+    }
+}
+
+// INPUT
+
+@mixin ne-input-theme($neer-theme) {
+    .ne-input-base {
+        color: #666; 
+        vertical-align: top;
+        margin: 0 10px;
+    }
+
+    .ne-input {
+        @extend .ne-button-base;
+        width: 260px;
+        height: 29px;
+        padding: 5px 20px;
+        vertical-align: top;
+        @include border-color(#888);
+        @include font-size-15;
+        @include border-radius(100px);
+        @include font-georgia;
+    }
+    .ne-textarea {
+        @extend .ne-button-base;
+        width: 260px;
+        height: 82px;
+        padding: 5px 20px;
+        @include border-color(#888);
+        @include font-size-15;
+        @include border-radius(5px);
+        @include font-georgia;
+    }
+}
+
+// TYPOGRAPHY
+
+@mixin ne-typography-theme($neer-theme) {
+    .ne-font-large-x {font: 300 24pt/30pt auto;}
+    .ne-font-large {font: 300 18pt/24pt auto;}
+    .ne-font-small {font: 300 13pt/18pt auto;}
+}
+
+// NEER DARK THEME
+
+@mixin ne-dark-components-theme($theme) {
+    $primary: map-get($theme, primary);
+    $primaryColor: mat-color($primary);
+    .mat-sidenav-container {background: #EDEDED;} 
+    .ne-navigation {background: #166079 !important; color: #FFF;}
+    .app-content {
+        .ne-button, .ne-button-x, .ne-button-fab {border-color: #FFF !important; background: #FFF !important;}
+        .ne-button-fab {color: #EDEDED !important;}
+        .ne-button-icon {color: #FFF !important;}
+    }
+}

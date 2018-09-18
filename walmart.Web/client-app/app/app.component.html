@@ -1,0 +1,22 @@
+<div class="mat-typography ne-root">
+  <mat-toolbar>
+    <mat-toolbar-row>
+        <mat-icon class="ne-logo" src="../assets/images/Walmart_Spark.fw.png"></mat-icon>
+        <a class="navbar-brand">
+            <img src="../assets/images/Walmart_Spark.fw.png" width="50" height="50" class="d-inline-block align-top" alt="">
+          </a>
+      <h2 class="ne-title"> Walmart Labs</h2>
+      <span class="ne-spacer"></span>
+      <span class="ne-subtitle">{{currentTime}}</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-sidenav-container>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+
+        <progress-spinner></progress-spinner>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+

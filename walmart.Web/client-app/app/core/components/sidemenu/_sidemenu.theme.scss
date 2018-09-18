@@ -1,0 +1,26 @@
+//@import '~@angular/material/theming';
+
+// partials should be named with prefix '_'. 
+// Only styles that are dependent on theme be mentioned here.
+
+@mixin ne-sidemenu-theme($theme) {
+    $primary: map-get($theme, primary);
+    $primaryColor: mat-color($primary);
+
+    .ne-menu-area {
+        position: relative;
+        color: $primaryColor;
+        float: left;
+        width: 100%;
+        padding-left: 0;
+    }
+    .ne-menu-active {
+        background: #eee !important;
+        border-right: 7px solid $primaryColor;
+    }
+    
+    .ne-selectable-item:hover, .ne-group-item:hover {
+        background: $primaryColor !important;
+        color: #FFF;
+    }
+}
